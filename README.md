@@ -139,7 +139,7 @@ sudo apt install nginx -y
 sudo docker stop mynodecont || true
 sudo docker rm mynodecont || true
 sudo docker pull surajmolke/mynodeapp:v1
-sudo docker run -d -p 80:3000 --name mynodecont surajmolke/mynodeapp:v1
+sudo docker run -d -p 8081:3000 --name mynodecont surajmolke/mynodeapp:v1
 sudo docker ps
 ```
 ![Output Screenshot](Screenshot/11.jpg)
