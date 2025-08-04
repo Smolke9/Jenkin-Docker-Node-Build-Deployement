@@ -1,11 +1,11 @@
 # 🚀 Jenkins Docker Node.js  Jenkins executes 4-stage :
   - `docker-build` → `docker-test` → `docker-push` → `docker-deploy`
 
-This document guides you through setting up a complete in **Jenkins** using **Docker** for a **Node.js** application with 4 freestyle jobs:
+This document guides you through setting up a complete in **Jenkins** using **Docker** for a **Node.js** application with 4 freestyle project:
 
 ---
 
-## 🔧 1. Jenkins Job: `docker-build`
+## 🔧 1. Jenkins: `docker-build`
 
 ### ✅ Purpose:
 
