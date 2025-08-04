@@ -155,10 +155,7 @@ After this step, the Node.js app will be running on port `8081` of the **remote 
 Deploy in Other Intance Output
 ![Output Screenshot](Screenshot/op6.jpg)
 ## ✅ Final Output:
-
-<p align="center">
-  <img src="Screenshot/finalop.jpg" alt="Output Screenshot" style="border: 3px solid limegreen; border-radius: 8px; box-shadow: 0 0 15px limegreen;" width="400"/>
-</p>
+![Output Screenshot](Screenshot/finalop.jpg)
 
 - Jenkins executes 4-stage :
   - `docker-build` → `docker-test` → `docker-push` → `docker-deploy`
