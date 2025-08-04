@@ -1,4 +1,4 @@
-# 🚀 Jenkins Docker Node.js  Jenkins executes 4-stage CI/CD pipeline:
+# 🚀 Jenkins Docker Node.js  Jenkins executes 4-stage :
   - `docker-build` → `docker-test` → `docker-push` → `docker-deploy`
 
 This document guides you through setting up a complete in **Jenkins** using **Docker** for a **Node.js** application with 4 freestyle jobs:
@@ -34,7 +34,7 @@ After successful build, image `myapp` should be visible on your EC2 instance via
 
 ---
 
-## 🔧 2. Jenkins Job: `docker-test`
+## 🔧 2. Jenkins : `docker-test`
 
 ### ✅ Purpose:
 
@@ -61,7 +61,7 @@ sudo docker container ls
 ![Output Screenshot](Screenshot/7.jpg)
 ---
 
-## 🔧 3. Jenkins Job: `docker-push`
+## 🔧 3. Jenkins: `docker-push`
 
 ### ✅ Purpose:
 
@@ -108,10 +108,12 @@ After this step, image `surajmolke/mynodeapp:v1` should be available on Docker H
       - **Private Key**: paste your remote EC2 private key (PEM file content)
 
 ![Output Screenshot](Screenshot/ssh1.jpg)
+Config SSH
 ![Output Screenshot](Screenshot/ssh2.jpg)
+SSH Remote With Private Key 
 ![Output Screenshot](Screenshot/ssh3.jpg)
   
-## 🔧 4. Jenkins Job: `docker-deploy`
+## 🔧 4. Jenkins : `docker-deploy`
 
 ### ✅ Purpose:
 
@@ -124,7 +126,7 @@ After this step, image `surajmolke/mynodeapp:v1` should be available on Docker H
   - `Build after other projects are built`
   - **Project to watch**: `docker-push`
 
-
+![Output Screenshot](Screenshot/10.jpg)
 
 ### **Build Step: Execute shell script on remote host using SSH**:
 
@@ -138,14 +140,27 @@ sudo docker pull swatizcloud/mynodeapp:v1
 sudo docker run -d -p 80:3000 --name mynodecont swatizcloud/mynodeapp:v1
 sudo docker ps
 ```
+![Output Screenshot](Screenshot/11.jpg)
+After this step, the Node.js app will be running on port `8081` of the **remote server**.
+## 📸 Output Screenshots
 
-After this step, the Node.js app will be running on port `80` of the **remote server**.
-
+<p align="center">
+  <img src="Screenshot/op1.jpg" alt="Docker-build" width="200" height="200"/>
+  <img src="Screenshot/op2.jpg" alt="Docker-test" width="200" height="200"/>
+  <img src="Screenshot/op3.jpg" alt="Docker-test" width="200" height="200"/>
+  <img src="Screenshot/op4.jpg" alt="Docker-push" width="200" height="200"/>
+  <img src="Screenshot/op5.jpg" alt="Docker-deploy" width="200" height="200"/>
+</p>
 ---
-
+Deploy in Other Intance Output
+![Output Screenshot](Screenshot/op6.jpg)
 ## ✅ Final Output:
 
-- Jenkins executes 4-stage CI/CD pipeline:
+<p align="center">
+  <img src="Screenshot/finalop.jpg" alt="Output Screenshot" style="border: 3px solid limegreen; border-radius: 8px; box-shadow: 0 0 15px limegreen;" width="400"/>
+</p>
+
+- Jenkins executes 4-stage :
   - `docker-build` → `docker-test` → `docker-push` → `docker-deploy`
 - Image is built, tested, pushed to Docker Hub, then deployed to remote EC2 instance via SSH.
 
