@@ -58,7 +58,9 @@ sudo docker rm nodecontainer || true
 sudo docker run -d -p 80:3000 --name nodecontainer myapp
 sudo docker container ls
 ```
+
 ![Output Screenshot](Screenshot/7.jpg)
+
 ---
 
 ## 🔧 3. Jenkins: `docker-push`
@@ -153,7 +155,9 @@ After this step, the Node.js app will be running on port `8081` of the **remote 
 </p>
 ---
 Deploy in Other Intance Output
+
 ![Output Screenshot](Screenshot/op6.jpg)
+
 ## ✅ Final Output:
 ![Output Screenshot](Screenshot/finalop.jpg)
 
